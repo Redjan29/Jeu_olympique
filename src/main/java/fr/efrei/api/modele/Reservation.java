@@ -2,19 +2,23 @@ package fr.efrei.api.modele;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 @Entity
 @Table(name = "RESERVATION")
+@Getter
+@Setter
 public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     //Une réservation appartient à un utilisateur, un événement et un billet
     @ManyToOne
-    @JoinColumn(name = "spectateur_id", referencedColumnName = "id")
+    @JoinColumn(name = "spectateur_id")
     private Spectateur spectateur;
 
 
@@ -31,38 +35,7 @@ public class Reservation {
     private String payment_status;
 
 
-    // Getters and Setters
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Spectateur getSpectateur() {
-        return spectateur;
-    }
-
-    public void setSpectateur(Spectateur spectateur) {
-        this.spectateur = spectateur;
-    }
-
-    public Evenement getEvenement() {
-        return evenement;
-    }
-
-    public void setEvenement(Evenement evenement) {
-        this.evenement = evenement;
-    }
-
-    public Billet getBillet() {
-        return billet;
-    }
-
-    public void setBillet(Billet billet) {
-        this.billet = billet;
-    }
 
 
 }

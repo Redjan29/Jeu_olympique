@@ -11,7 +11,7 @@ import java.util.List;
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
-@RequestMapping("/api/spectateurs")
+@RequestMapping("/spectateur")
 public class SpectateurController {
 
     @Autowired
@@ -19,8 +19,8 @@ public class SpectateurController {
 
     @GetMapping
     public ResponseEntity<List<Spectateur>> getAllSpectateurs() {
-        List<Spectateur> spectateurs = spectateurService.getAllSpectateurs();
-        return ResponseEntity.ok(spectateurs);
+        List<Spectateur> spectateur = spectateurService.getAllSpectateurs();
+        return ResponseEntity.ok(spectateur);
     }
 
     // Vérifier qu'il y'a un spectateur

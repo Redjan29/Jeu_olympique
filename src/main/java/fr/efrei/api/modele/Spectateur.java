@@ -2,15 +2,20 @@ package fr.efrei.api.modele;
 
 import fr.efrei.api.modele.Reservation;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
 @Table(name = "SPECTATEUR")
+@Getter
+@Setter
 public class Spectateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
 
     private String nom;
@@ -28,46 +33,6 @@ public class Spectateur {
     }
 
 
-    // Getters and Setters
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
-    public List<Reservation> getReservation() {
-        return reservation;
-    }
-    public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
-    }
 
 
 

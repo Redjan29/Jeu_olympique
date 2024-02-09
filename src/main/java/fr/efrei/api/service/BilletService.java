@@ -30,7 +30,6 @@ public class BilletService {
         return getBilletById(id).map(b -> {
             b.setEvenement(updatedBillet.getEvenement());
             b.setPrix(updatedBillet.getPrix());
-            b.setQuantite(updatedBillet.getQuantite());
             // ... Mettez à jour d'autres champs si nécessaire
             return billetRepository.save(b);
         });

@@ -1,9 +1,13 @@
 package fr.efrei.api.modele;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "BILLET")
+@Getter
+@Setter
 public class Billet {
 
     @Id
@@ -16,38 +20,6 @@ public class Billet {
     private Evenement evenement;
 
     private double prix;
-    private int quantite;
 
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Evenement getEvenement() {
-        return evenement;
-    }
-
-    public void setEvenement(Evenement evenement) {
-        this.evenement = evenement;
-    }
-
-    public double getPrix() {
-        return prix;
-    }
-
-    public void setPrix(double prix) {
-        this.prix = prix;
-    }
-
-    public int getQuantite() {
-        return quantite;
-    }
-
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
 }

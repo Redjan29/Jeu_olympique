@@ -1,4 +1,4 @@
-package fr.efrei.api.modele;
+package fr.efrei.api;
 
 
 import org.springframework.boot.SpringApplication;
